@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Units Converter</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .content 
+            {
+            padding: 20px;
+            margin-top: 50px; 
+            }
+
+
+        h1 
+        {
+            color: #fff;
+            background-color: #3F3D3D;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            text-align: right;
+            width: 120px;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #3F3D3D;
+            color: #fff;
+            border: none;
+        }
+
+        h5 {
+            font-size: 27px;
+            text-align: center;
+        }
+
+        .emphasis {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+ 
+   
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Input Examples<i class="fa fa-caret-down"></i></button>     
+           <div class="w3-dropdown-content w3-bar-block w3-card-4">
+             <a href="Conversion.html" class="w3-bar-item w3-button">Unit Converter</a>
+             <a href="taxCalculator.html" class="w3-bar-item w3-button">Income Tax Calculator</a>
+            <a href="loops.html" class="w3-bar-item w3-button">Factorial, Sum, Average of first N Natural numbers</a>
+            <a href="payroll.html" class="w3-bar-item w3-button">Simple Payroll</a>
+      </div>
+    </div>
+
+   
+   
+  </div>
+</div>
+
+    <div class="content">
+
+        <h1> Fahrenheit to Celsius </h1>
+
+        <label for="fahrenheit">Enter temperature (in Fahrenheit)</label><br>
+        <h5 id="result1"></h5><br>
+        <input type="number" id="valuefahrenheit" name="fahrenheit">
+        <button onclick="converttocelsius()">Convert</button>
+        <br><br>
+
+        <h1> Convert Celsius to Fahrenheit </h1>
+
+        <label for="celsius">Enter temperature (in Celsius)</label><br>
+        <h5 id="result"></h5>
+        <input type="number" id="value" name="celsius">
+        <button onclick="converttofahrenheit()">Convert</button>
+
+        <h1> Convert Meters to Feet </h1>
+
+        <label for="meters">Enter length (in meters)</label><br>
+        <h5 id="result3"></h5>
+        <input style="text-align:right" type="number" id="valuemeters" name="meters">
+        <button onclick="convertToFeet()">Convert</button>
+
+        <br><br>
+        <h1> Convert Feet to Meters </h1>
+
+        <label for="feet">Enter length (in feet)</label><br>
+        <h5 id="result4"></h5>
+        <input style="text-align: right" type="number" id="valuefeet" name="feet">
+        <button onclick="convertToMeters()">Convert</button>
+
+        <script>
+            function converttocelsius() {
+                var num;
+                num = parseFloat(document.getElementById("valuefahrenheit").value);
+                document.getElementById("result1").innerHTML =
+                    num + "° Fahrenheit to Celsius:  <span class='emphasis'>" + ((num - 32) / 1.8).toFixed(2) + "° C</span>";
+            }
+
+            function converttofahrenheit() {
+                var num;
+                num = parseFloat(document.getElementById("value").value);
+                document.getElementById("result").innerHTML =
+                    num + "° Celsius to Fahrenheit: <span class='emphasis'> " + (((num * 1.8) + 32).toFixed(2)) + "° C</span>";
+            }
+
+            function convertToFeet() {
+                var num = parseFloat(document.getElementById("valuemeters").value);
+                document.getElementById("result3").innerHTML =
+                    num + " meters to feet: <span class='emphasis'> " + ((num / 0.3048).toFixed(2)) + "ft</span>";
+            }
+
+            function convertToMeters() {
+                var num = parseFloat(document.getElementById("valuefeet").value);
+                document.getElementById("result4").innerHTML =
+                    num + " feet to meters: <span class='emphasis'> " + ((num * 0.3048).toFixed(2)) + "m</span>";
+            }
+        </script>
+
+    </div>
+
+</body>
+
+</html>
